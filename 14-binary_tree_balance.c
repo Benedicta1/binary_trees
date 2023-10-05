@@ -1,18 +1,35 @@
 #include "binary_trees.h"
 
-
-#ifndef MAX_INT
-#define MAX_INT
-
 /**
- * max_int - This finds larger of two int values
- * @a: The first value to compare
- * @b: The second value to compare
- * Return: larger int value, or value of both if equal
+ * binary_tree_is_leaf - checks if a node is a leaf
+ * @node: pointer to the node to check
+ *
+ * Return: 1 if node is a leaf, and 0 otherwise. If node is NULL, return 0
  */
-inline int max_int(int a, int b)
+int binary_tree_is_leaf(const binary_tree_t *node)
 {
-	return ((a > b) ? a : b);
+	if (node != NULL && node->left == NULL && node->right == NULL)
+		return (1);
+	return (0);
 }
 
-#endif
+/**
+ * binary_tree_height - measures the height of a binary tree
+ * @tree: pointer to the root node of the tree to measure the height of
+ *
+ * Return: the height of the tree. If tree is NULL, return 0
+ */
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+	size_t left, right;
+
+	if (tree == NULL)
+		return (0);
+	left = binary_tree_height(tree->left);
+	right = binary_tree_height(tree->right);
+	if (left >= right)
+		return (1 + left);
+	return (1 + right);
+}
+
+/**
