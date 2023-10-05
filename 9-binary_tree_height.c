@@ -2,17 +2,17 @@
 
 /**
  * max_size_t - finds larger of two size_t values
- * @x: The first value to compare
- * @y: The second value to compare
+ * @a: The first value to compare
+ * @b: The second value to compare
  * Return: larger size_t value, or value of both if equal
  */
-size_t max_size_t(size_t x, size_t y)
+size_t max_size_t(size_t a, size_t b)
 {
-	return ((x > y) ? x : y);
+	return ((a > b) ? a : b);
 }
 
 /**
  * binary_tree_height - measures the height of a binary tree
- * @tree: pointer to the root node of the tree to measure the height
- * Return: levels from root, or 0 if `tree` is NULL
+ * @tree:  root node of the tree to measure the height.
+ * Return: If tree is NULL, your function must return 0
  */
