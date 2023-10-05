@@ -6,9 +6,9 @@
  * @y: The second value to compare
  * Return: larger size_t value, or value of both if equal
  */
-size_t max_size_t(size_t a, size_t b)
+size_t max_size_t(size_t x, size_t y)
 {
-	return ((a > b) ? a : b);
+	return ((x > y) ? x : y);
 }
 
 /**
